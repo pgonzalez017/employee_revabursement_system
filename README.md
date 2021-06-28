@@ -13,7 +13,7 @@ if they are resolving the reimbursement, they should be the "resolver".
 
 ## API Documentation and Snippets
 
-### Users
+### Users (NOT AUTHENTICATED)
 > GET **/users** : retrieves all users as a pageable. 
   Optional request parameters (page, offset, sort, order)
 
@@ -27,7 +27,7 @@ if they are resolving the reimbursement, they should be the "resolver".
   Required fields {username, password}
   NOTE: The JWT returned must be passed as a Bearer token in the headers of your fetch call in order to access the restricted Reimbursements endpoint.
 
-### Reimbursements
+### Reimbursements (AUTHENTICATED)
 > GET **/reimbursements** : retrieves all reimbursements as a pageable. 
   Optional request parameters (page, offset, sort, order)
 
