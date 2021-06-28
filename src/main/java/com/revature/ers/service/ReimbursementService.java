@@ -66,7 +66,7 @@ public class ReimbursementService {
         reimbursement.setReimbursementStatus(
                 ReimbursementStatus.getByName(reimbursementDTO.getReimbursementStatus()));
         reimbursement.setResolver(userRepository.findByUsername(reimbursementDTO.getResolverUsername()));
-        reimbursement.setReceiptURI("/reimbursements/" + reimbursement.getId());
+        reimbursement.setReceiptURI("http://employeerevabursementsystem-env.eba-s9jgpymb.us-east-2.elasticbeanstalk.com/reimbursements/" + reimbursement.getId());
 
         return modelMapper.map(reimbursementRepository.save(reimbursement), ReimbursementDTO.class);
     }
