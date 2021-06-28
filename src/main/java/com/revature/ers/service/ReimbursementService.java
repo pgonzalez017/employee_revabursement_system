@@ -1,10 +1,8 @@
 package com.revature.ers.service;
 
 import com.revature.ers.dto.ReimbursementDTO;
-import com.revature.ers.dto.UserDTO;
 import com.revature.ers.model.Reimbursement;
 import com.revature.ers.model.ReimbursementStatus;
-import com.revature.ers.model.User;
 import com.revature.ers.repository.ReimbursementRepository;
 
 import com.revature.ers.repository.UserRepository;
@@ -24,14 +22,11 @@ public class ReimbursementService {
 
     private final ReimbursementRepository reimbursementRepository;
     private final UserRepository userRepository;
-    private final UserService userService;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public ReimbursementService(ReimbursementRepository reimbursementRepository, UserService userService,
-                                ModelMapper modelMapper, UserRepository userRepository){
+    public ReimbursementService(ReimbursementRepository reimbursementRepository, ModelMapper modelMapper, UserRepository userRepository){
         this.reimbursementRepository = reimbursementRepository;
-        this.userService = userService;
         this.modelMapper = modelMapper;
         this.userRepository = userRepository;
     }
