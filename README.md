@@ -14,25 +14,28 @@ if they are resolving the reimbursement, they should be the "resolver".
 ## API Documentation and Snippets
 
 ### Users
-GET /users : retrieves all users as a pageable. 
+> GET **/users** : retrieves all users as a pageable. 
   Optional request parameters (page, offset, sort, order)
-GET /users/{userId} : retrieves a single user by their id.
 
-POST /users : creates a new user. 
-  Required fields {username (unique), password, email(unique)}. 
-  Optional fields {firstName, lastName, authority ("EMPLOYEE", "MANAGER", "ADMIN", "LOCKED")}
+> GET **/users/{userId}** : retrieves a single user by their id.
 
-POST /users/authenticate : authenticates a user and returns a JWT
+
+> POST **/users** : creates a new user. 
+>  Required fields {username (unique), password, email(unique)}. Optional fields {firstName, lastName, authority ("EMPLOYEE", "MANAGER", "ADMIN", "LOCKED")}
+
+> POST **/users/authenticate** : authenticates a user and returns a JWT
   Required fields {username, password}
   NOTE: The JWT returned must be passed as a Bearer token in the headers of your fetch call in order to access the restricted Reimbursements endpoint.
 
 ### Reimbursements
-GET /reimbursements : retrieves all reimbursements as a pageable. 
+> GET **/reimbursements** : retrieves all reimbursements as a pageable. 
   Optional request parameters (page, offset, sort, order)
-GET /reimbursements/{id} : retrieves a single reimbursement by its id.
 
-POST /reimbursements : creates a new reimbursement
+> GET **/reimbursements/{id}** : retrieves a single reimbursement by its id.
+
+> POST **/reimbursements** : creates a new reimbursement
   Required Fields { amount, description, authorUsername (user must exist), reimbursementStatus(defaults to Pending), reimbursementType("Lodging", "Travel", "Food", "Other")}
-POST /reimbursements/resolve : resolves/updates a reimbursement that already exists.
+
+> POST **/reimbursements/resolve** : resolves/updates a reimbursement that already exists.
   Required Fields { id, resolverUsername, reimbursementStatus }
 
