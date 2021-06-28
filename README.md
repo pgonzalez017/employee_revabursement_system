@@ -7,7 +7,7 @@ http://employeerevabursementsystem-env.eba-s9jgpymb.us-east-2.elasticbeanstalk.c
 
 1. Create a Front End that will allow employees and managers to create, view and approve reimbursements.
 2. Users should be able to create and log in to their account.
-3. The backend API is setup with Spring Security and protected by authentication. You must utilize JWTs to access the backend.
+3. The backend API is setup with Spring Security and protected by authentication. You must utilize JWTs to access the Reimbursements endpoint.
 4. The currently logged in user should be associated with the action. If they are creating the reimbursement, they should be the "author", 
 if they are resolving the reimbursement, they should be the "resolver".
 
